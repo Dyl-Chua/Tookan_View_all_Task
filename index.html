@@ -1,0 +1,36 @@
+<body>
+<script>
+
+var request = new XMLHttpRequest();
+
+request.open('POST', 'https://api.tookanapp.com/v2/get_all_tasks');
+
+request.setRequestHeader('Content-Type', 'application/json');
+
+request.onreadystatechange = function () {
+if (this.readyState === 4) {
+console.log('Status:', this.status);
+console.log('Headers:', this.getAllResponseHeaders());
+console.log('Body:', this.responseText);
+}
+};
+
+var body = {
+    "api_key": "51676580f24b091114132d38111925401ee4c2f328d978375e1f03",
+    "job_status": 6,
+    "job_type": 1,
+    "start_date": "2020-08-20",
+    "end_date": "2021-12-25",
+    "custom_fields": 1,
+    "is_pagination":1,
+    "requested_page":1,
+    "customer_id":"",
+    "job_id": [],
+    "order_id": [],
+    "team_id":921691
+}
+
+request.send(JSON.stringify(body));
+
+</script>
+</body>
